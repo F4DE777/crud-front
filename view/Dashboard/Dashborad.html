@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"  ng-app="myApp" data-ng-cloak>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <link href="./bower_components/angular-material/angular-material.min.css" rel="stylesheet" type="text/css"/>
-    <link href="./bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
-    <!-- <link rel="stylesheet" href="./datatabeRoutes/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="./datatabeRoutes/dataTables.bootstrap.min.css"> -->
-</head>
 <style>
    md-card, md-table-container{
         width: 100%;
@@ -34,31 +20,8 @@
         justify-content: space-between;
     }
 </style>
-<body data-ng-controller="dashboardController" ng-init="model.getUserData()">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">    
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-                </li>
-              
-  
-            </ul>
-        </div>
-        <div>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="#">{{model.greeting}}   ({{model.loggedInUserData.role_pivot.role_name}})</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" ng-click="model.logOut()">Log Out</a>
-                </li>
-                <li>
-                    
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div>
+
     <div class="container" >
             <div class="row">
                 <div class="col-12">
@@ -161,37 +124,5 @@
             </div>
     </div>
     
-</body>
-    <!-- <script src="./datatabeRoutes/jquery-2.2.4.min.js"></script> -->
-    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
-        <!-- <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.min.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.min.js.map"></script>
-        <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.min.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-material-data-table/dist/md-data-table.min.js"></script> -->
-
-        <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
-        <script type="text/javascript" src="./bower_components/angular-material-data-table/dist/fixed-table-header.js"></script>
-
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-        <script src="https://rawgit.com/daniel-nagy/md-data-table/master/dist/md-data-table.js"></script> -->
-
-   <script src="../../controller/dashboardController.js"></script>
-    <script src="../../service/userService.js"></script>
-
-
- 
-
-<!-- <script type="text/javascript">
-    
-  $(document).ready(function(){
-        $('#myTable').dataTable( { "sPaginationType": "full_numbers" } );
-    });
-</script> -->
-
-</html>
+</div>
+   
