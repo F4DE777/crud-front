@@ -1,4 +1,16 @@
-var app = angular.module('myApp',['ngRoute', 'LocalStorageModule', 'angular-loading-bar'])
+var app = angular.module('myApp',[
+        // 'ngMaterial',
+        'ngRoute', 
+        'LocalStorageModule',
+        'angular-loading-bar',
+        'md.data.table',
+        // 'ngMaterial',
+        // 'ngMessages',
+        'myAppHomeCtrl',
+        'myAppUserCtrl'
+    ])
+
+
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -6,10 +18,7 @@ app.config(function ($routeProvider) {
         templateUrl : "/view/home.html",
         controller: 'demoController'
     })
-    // .when("/home", {
-    //     templateUrl : "/view/home2.html",
-    //     controller: 'demoController'
-    // })
+
     .when("/login", {
         templateUrl : "/view/Login/login.html",
         controller: 'userController'
@@ -36,7 +45,3 @@ app.config(function ($httpProvider) {
 
 app.controller('demoController', function($scope) {});
 
-// app.config(['$mdThemingProvider', function ($mdThemingProvider) {
-//         $mdThemingProvider.theme('default')
-//         .primaryPalette('blue');
-//     }]);

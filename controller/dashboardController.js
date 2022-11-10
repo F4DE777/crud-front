@@ -1,5 +1,9 @@
+// var app = angular.module('myApp',["userService",'ngMaterial','md.data.table'])
 
-app.controller('dashboardController',['$scope','userService','$q','$http','$timeout',function($scope,userService,$q,$http,$timeout){
+
+
+
+angular.module('myAppHomeCtrl', []).controller('dashboardController',['$scope','userService','$q','$http','$timeout',function($scope,userService,$q,$http,$timeout){
     var searchDefer = null;
         $scope.model = {};
         $scope.model.login = {};
@@ -12,50 +16,50 @@ app.controller('dashboardController',['$scope','userService','$q','$http','$time
   
         
 
-        // $scope.model.submitLogin = function(){
+        $scope.model.submitLogin = function(){
         
-        //     var email = $scope.model.login.email;
-        //     var password = $scope.model.login.password;
-        //     if (password.length < 6){
-        //         $scope.model.login.passwordError = "password must be greater that 6";
-        //         return;
-        //     }else{
-        //         $scope.model.login.passwordError = ""
-        //     }
-        //     // console.log(password,email, "check")
+            var email = $scope.model.login.email;
+            var password = $scope.model.login.password;
+            if (password.length < 6){
+                $scope.model.login.passwordError = "password must be greater that 6";
+                return;
+            }else{
+                $scope.model.login.passwordError = ""
+            }
+            // console.log(password,email, "check")
 
-        //     userService.login(email, password, 
-        //         function (responce){
-        //         $scope.model.userData = responce.data;
-        //         console.log($scope.model.userData)
-        //         console.log(responce.data);
+            userService.login(email, password, 
+                function (responce){
+                $scope.model.userData = responce.data;
+                console.log($scope.model.userData)
+                console.log(responce.data);
 
-        //         if(responce.data.success){
-        //             $scope.model.welcome = 'Welcome '+$scope.model.userData.user.first_name;
-        //             console.log($scope.model.userData );
-        //             localStorage.setItem("loggedInUser", $scope.model.userData.user.id);
-        //             $scope.model.loggedInUser = localStorage.getItem('loggedInUser');
-        //             window.location = ("#/Dashborad.html")
-        //         }else if(responce.data.error){
+                if(responce.data.success){
+                    $scope.model.welcome = 'Welcome '+$scope.model.userData.user.first_name;
+                    console.log($scope.model.userData );
+                    localStorage.setItem("loggedInUser", $scope.model.userData.user.id);
+                    $scope.model.loggedInUser = localStorage.getItem('loggedInUser');
+                    window.location = ("#/Dashborad.html")
+                }else if(responce.data.error){
 
-        //             $scope.model.welcome = responce.data.error;
-        //             $scope.model.loggedInUser = null;
-        //             console.log(responce.data.error);
+                    $scope.model.welcome = responce.data.error;
+                    $scope.model.loggedInUser = null;
+                    console.log(responce.data.error);
 
-        //         }
-        //         },
-        //         function(responce){
+                }
+                },
+                function(responce){
                     
-        //             $scope.model.welcome = responce.data.error;
-        //             console.log(responce.data.error)
-        //             $scope.model.loggedInUser = null;
-        //             window.location = ("../SignUp/signUp.html")
+                    $scope.model.welcome = responce.data.error;
+                    console.log(responce.data.error)
+                    $scope.model.loggedInUser = null;
+                    window.location = ("../SignUp/signUp.html")
 
 
-        //         }
-        //         )
+                }
+                )
 
-        // }
+        }
 
         $scope.model.getAllUsers = function ( pageNumber = 1 , limit = 5, searchText = '' )
         {
@@ -147,16 +151,16 @@ app.controller('dashboardController',['$scope','userService','$q','$http','$time
             }
         }
         
-        // $scope.model.getAllUsers(1,5,'')
-        // .then(function(data) 
-        //             {
-        //                 $scope.model.users =  data; 
-        //                 console.log($scope.model.users.total);
-        //             }); 
+        $scope.model.getAllUsers(1,5,'')
+        .then(function(data) 
+                    {
+                        $scope.model.users =  data; 
+                        console.log(model.users.total);
+                    }); 
         
 
         $scope.logPagination = function (page, limit) 
-                    {
+                    { console.log(('actually got here, log paginating'))
                         var searchInput =  $scope.query.search;
                         $scope.model.getAllUsers ( page , limit, searchInput )
                         .then(function ( data )
@@ -170,7 +174,7 @@ app.controller('dashboardController',['$scope','userService','$q','$http','$time
                         var page = $scope.query.page;
                         var limit = $scope.query.limit;
                         var searchInput =  $scope.query.search;
-                        console.log($scope.query)
+                        console.log(('actually got here'))
 
                         $scope.model.getAllUsers( page , limit, searchInput )
                         .then(function ( data )
@@ -258,7 +262,11 @@ app.controller('dashboardController',['$scope','userService','$q','$http','$time
         $scope.model.logOut = function(){
             localStorage.removeItem("loggedInUser");
             localStorage.removeItem("token");
-            $scope.model.loggedInUser = localStorage.getItem('loggedInUser');
+            localStorage.removeItem("editUserID");
+            localStorage.removeItem("editUserFN");
+            localStorage.removeItem("editUserLN");
+            localStorage.removeItem("editUserRL");
+            localStorage.removeItem("editUserEM");
                
             window.location = ("#/login")
             location.reload();

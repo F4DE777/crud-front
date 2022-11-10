@@ -1,4 +1,4 @@
-app.controller('userController',['$scope','userService',function($scope,userService){
+angular.module('myAppUserCtrl', []).controller('userController',['$scope','userService',function($scope,userService){
         $scope.model = {};
         $scope.model.login = {};
         $scope.model.welcome = null;

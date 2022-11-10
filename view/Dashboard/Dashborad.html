@@ -20,9 +20,9 @@
         justify-content: space-between;
     }
 </style>
-<div>
+<div ng-app="myApp" data-ng-cloak data-ng-controller="dashboardController" ng-init="model.logPagination()">
 
-    <div class="container" >
+    <div class="container"   >
             <div class="row">
                 <div class="col-12">
                     <div style="float: right; ">
@@ -79,8 +79,8 @@
                         <tbody md-body>
     
                             <tr md-row ng-repeat="user in model.users.data">
-                                <td md-cell>{{ (query.page*query.limit)+($index+1) - query.limit}}</td>
-                                <td md-cell>{{user.first_name }}</td>
+                                <td class="md-cell ng-binding" md-cell>{{ (query.page*query.limit)+($index+1) - query.limit}}</td>
+                                <td class="md-cell ng-binding" md-cell>{{user.first_name }}</td>
                                 <td md-cell>{{user.last_name }}</td>
                                 <td md-cell>{{user.email}}</td>
                                 <td md-cell>{{user.role_pivot.role_name  }}</td>
@@ -107,15 +107,7 @@
                                 
                     </md-table-pagination> 
 
-                    <!-- <md-table-pagination 
-                    md-limit="query.limit" 
-                    md-limit-options="[5, 10, 15]" 
-                    md-page="query.page" 
-                    md-total="{{model.users.total}}"
-                    md-on-paginate="logPagination" 
-                    md-page-select
-                    ></md-table-pagination> -->
-
+               
 
 
                 </md-card>
@@ -125,4 +117,4 @@
     </div>
     
 </div>
-   
+    

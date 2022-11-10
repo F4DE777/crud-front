@@ -1,0 +1,23 @@
+{
+  "name": "bower.json",
+  "description": "bower",
+  "main": "bower.json",
+  "authors": [
+    "ss"
+  ],
+  "license": "ss",
+  "keywords": [
+    "ss"
+  ],
+  "homepage": "https://github.com/F4DE777/crud-front",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material-data-table": "^0.10.10"
+  }
+}
