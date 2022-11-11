@@ -1,18 +1,23 @@
-var app = angular.module('myApp',[
-        // 'ngMaterial',
-        'ngRoute', 
+var myApp = angular.module("myApp",[
+            'ui.router',
+            // 'ngMaterial',
+            // 'md.data.table', 
+            // 'fixed.table.header', 
+        'ngRoute',  
         'LocalStorageModule',
+        // 'fixed.table.header',
         'angular-loading-bar',
-        'md.data.table',
+        // 'md.data.table',
         // 'ngMaterial',
-        // 'ngMessages',
+        'ngMessages',
         'myAppHomeCtrl',
         'myAppUserCtrl'
-    ])
+    ]);
+
+// angular.injector(['myApp', 'ngMaterial']);
 
 
-
-app.config(function ($routeProvider) {
+    myApp.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
         templateUrl : "/view/home.html",
@@ -39,9 +44,9 @@ app.config(function ($routeProvider) {
     .otherwise({ redirectTo: "/" });
 });
 
-app.config(function ($httpProvider) {
+myApp.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
-app.controller('demoController', function($scope) {});
+myApp.controller('demoController', function($scope) {});
 

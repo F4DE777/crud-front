@@ -155,7 +155,7 @@ angular.module('myAppHomeCtrl', []).controller('dashboardController',['$scope','
         .then(function(data) 
                     {
                         $scope.model.users =  data; 
-                        console.log(model.users.total);
+                        // console.log(model.users.total);
                     }); 
         
 

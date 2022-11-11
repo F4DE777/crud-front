@@ -1,4 +1,4 @@
-app.factory('userService', ['$http',function($http){
+myApp.factory('userService', ['$http',function($http){
 
     function login(email, password,onSuccess, onError){
         var params = {

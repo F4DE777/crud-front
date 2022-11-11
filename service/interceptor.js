@@ -1,4 +1,4 @@
-app.factory('authInterceptorService', ['$q', '$injector','$location', function ($q, $injector,$location) {
+myApp.factory('authInterceptorService', ['$q', '$injector','$location', function ($q, $injector,$location) {
 
     var authInterceptorServiceFactory = {};
     var $http;
