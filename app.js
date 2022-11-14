@@ -1,17 +1,14 @@
 var myApp = angular.module("myApp",[
             'ui.router',
             // 'ngMaterial',
-            // 'md.data.table', 
-            // 'fixed.table.header', 
-        'ngRoute',  
-        'LocalStorageModule',
-        // 'fixed.table.header',
-        'angular-loading-bar',
-        // 'md.data.table',
-        // 'ngMaterial',
-        'ngMessages',
-        'myAppHomeCtrl',
-        'myAppUserCtrl'
+            'md.data.table', 
+            'fixed.table.header', 
+            'ngRoute',  
+            'LocalStorageModule',
+            'angular-loading-bar',
+            'ngMessages',
+            'myAppHomeCtrl',
+            'myAppUserCtrl'
     ]);
 
 // angular.injector(['myApp', 'ngMaterial']);
