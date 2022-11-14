@@ -134,10 +134,3 @@ myApp.controller('appController', ['$mdEditDialog', '$http', '$q', '$timeout', '
   
 }]);
 
-myApp.controller('loginController', [function(){
-
-}]);
-
-myApp.controller('registerController', [function(){
-
-}]);
