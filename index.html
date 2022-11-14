@@ -1,89 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp" >
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
-    <link href="./vendors/datatables.min.css" rel="stylesheet">
-    <link href="vendors/bower_components/angular-material-data-table/dist/md-data-table.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
-    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css"> -->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.css">
+</head>
 
-    <!--  -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"  crossorigin="anonymous">
-    <!--  -->
+<body ng-app="myApp" ng-cloak>
 
-    <!--  -->
-  </head>
-<body  data-ng-controller="dashboardController" data-ng-controller="userController">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#/">Home</a>
+    <navigation></navigation>
     
-        <ul ng-if="!model.loggedInUserData.id" class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#/login">Login</a>
-            </li>
-            <!-- <li class="nav-item active">
-                <a class="nav-link" href="#/signup">SignUp</a>
-            </li>     -->
-        </ul>
+    <ng-view></ng-view>
 
-        <div ng-if="model.loggedInUserData.id">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                <italic  class="nav-link" href="#">{{model.greeting}}   ({{model.loggedInUserData.role_pivot.role_name}})</italic>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" ng-click="model.logOut()">Log Out</a>
-                </li>
-                <li>
-                    
-                </li>
-            </ul>
-        </div>
-    
-        </div>
-        
-    </nav>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
 
-    <div class="container">
-        <ng-view></ng-view>
-    </div>
-    
-    <script src="./vendors/angular.js"></script>
-    <script src="./vendors/angular-ui-router.js"></script>
-
-    <script src="./vendors/bower_components/angular-material-data-table/dist/fixed-table-header.js"></script>
-    <!-- <script src="./vendors/bower_components/angular-material-data-table/dist/md-data-table.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script> -->
-        <script src="./vendors/bower_components/angular-animate.js"></script>
-    <script src="./vendors/bower_components/angular-aria.js"></script>
-    <script src="./vendors/bower_components/angular-messages.js"></script>
-
-    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-animate.min.js"></script> -->
-            <!-- <script src="https://code.angularjs.org/1.3.15/angular-aria.js"></script> -->
-    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-messages.min.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.js"></script> -->
-    <!-- <script src="./vendors/bower_components/angular-material/angular-material.js"></script> -->
-    <script src="./vendors/bower_components/angular-localstorage/angular-local-storage.min.js"></script>
-    <!-- <script src="./vendors/popper.min.js"></script> -->
-    <script src="./vendors/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="./bower_components/angular-material-data-table/dist/fixed-table-header.js"></script>
-    <script type="text/javascript" src="bower_components/angular-material-data-table/dist/md-data-table.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script> -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.js"></script> 
-    <script src="scripts/angular-local-storage.min.js"></script>
-    <script src="scripts/loading-bar.min.js"></script>
-    <script src="./app.js"></script>
-    <script src="./service/interceptor.js"></script>
-    <script src="./service/userService.js"></script>
-    <script src="./controller/userController.js"></script>
-    <script src="./controller/dashboardController.js"></script>
-
-
+    <!-- Your application bootstrap  -->
+    <script src="app.js"></script>
+    <script src="scripts/appControllar.js"></script>
 </body>
+
 </html>

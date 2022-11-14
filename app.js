@@ -1,52 +1,32 @@
-var myApp = angular.module("myApp",[
-            'ui.router',
-            // 'ngMaterial',
-            // 'md.data.table', 
-            // 'fixed.table.header', 
-        'ngRoute',  
-        'LocalStorageModule',
-        // 'fixed.table.header',
-        'angular-loading-bar',
-        // 'md.data.table',
-        // 'ngMaterial',
-        'ngMessages',
-        'myAppHomeCtrl',
-        'myAppUserCtrl'
-    ]);
-
-// angular.injector(['myApp', 'ngMaterial']);
+var myApp = angular.module('myApp', [
+    'ngMaterial',
+    'ngRoute',
+    'ngMessages',
+    'LocalStorageModule',
+    'md.data.table',
+]);
 
 
-    myApp.config(function ($routeProvider) {
+myApp.config(function ($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "/view/home.html",
-        controller: 'demoController'
+        templateUrl : "/views/home.html",
+        controller: 'appController'
     })
 
     .when("/login", {
-        templateUrl : "/view/Login/login.html",
-        controller: 'userController'
+        templateUrl : "/views/login.html",
+        controller: 'loginController'
     })
-    .when("/dashboard", {
-        templateUrl : "/view/Dashboard/Dashborad.html",
-        controller: 'dashboardController'
+
+    .when("/register", {
+        templateUrl : "/views/register.html",
+        controller: 'registerController'
     })
-    .when("/signup", {
-        templateUrl : "/view/SignUp/signUp.html",
-        controller: 'userController'
-    })
-    .when("/edit", {
-        templateUrl : "/view/Edit/edit.html",
-        controller: 'dashboardController'
-    })
-    
+
     .otherwise({ redirectTo: "/" });
 });
 
-myApp.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptorService');
+myApp.component('navigation', {
+templateUrl: 'components/navigation.html'
 });
-
-myApp.controller('demoController', function($scope) {});
-
